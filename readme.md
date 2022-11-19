@@ -3,7 +3,8 @@
 - Step 2 : Create our Self-Signed Certificate with our root Authority
 
 **Inspired from tutorial**  
-[How to Create Self-Signed Certificates using OpenSSL ](https://devopscube.com/create-self-signed-certificates-openssl/)  
+- [How to Create Self-Signed Certificates using OpenSSL ](https://devopscube.com/create-self-signed-certificates-openssl/)  
+- [Creating a Self-Signed Certificate With OpenSSL ](https://www.baeldung.com/openssl-self-signed-cert)  
 
 **Prerequisites :**
 - Openssl installed on your host
@@ -12,7 +13,7 @@
 ## > Context
 You want to set up SSL/TLS communication between servers.  
 The trick is here : we can be our own certificate authority (CA) by creating a self-signed root CA certificate,  
-and then installing it as a trusted certificate in our the local browser.  
+and then installing it as a trusted certificate in our local browser.  
 Dude, how are you gonna that ?  
 Man, it's quiet simple, we will just generate 5 files.
 - rootCA.crt  rootCA.key : encrypted, our root Authority to signe certificates  
@@ -22,6 +23,10 @@ Man, it's quiet simple, we will just generate 5 files.
 
 After that, we will use our server.crt file to configure our web server and set SSL, and rootCA.crt in our browser  
 to inform him that our server can be trusted.  
+
+Belows, images illustrating real and self-signed certificates  
+![self-signed-certificate-flow.png ](./self-signed-certificate-flow.png "self-signed-certificate-flow")  
+![well-known-certificate-authority-flow.png ](./well-known-certificate-authority-flow.png "well-known-certificate-authority-flow")  
 
 ## >> STEP 1 : Create our own root CA certificate Authority
 We will use our rootCA.key and rootCA.crt to sign later the SSL certificate.  
@@ -145,6 +150,8 @@ openssl x509 -req \
 *Certificate request self-signature ok*  
 *subject=C = FR, ST = FRANCE, L = PARIS, O = myCie, OU = section3, CN = www.my-little-compagny.com*  
 
+You have it now ! here's your server.crt certificate file !  
+Ok ! In the real world, you can sumbit your request to a real Authority. And that's not real problem, isnt' it ?
 
 
 ### Before closing your computer 
