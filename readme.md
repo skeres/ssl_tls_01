@@ -24,8 +24,10 @@ Man, it's quiet simple, we will just generate 5 files.
 After that, we will use our server.crt file to configure our web server and set SSL, and rootCA.crt in our browser  
 to inform him that our server can be trusted.  
 
-Belows, images illustrating real and self-signed certificates  
+Belows, images illustrating real and self-signed certificates flow   
+**self-signed certificates**  
 ![self-signed-certificate-flow.png ](./self-signed-certificate-flow.png "self-signed-certificate-flow")  
+**real certificate**  
 ![well-known-certificate-authority-flow.png ](./well-known-certificate-authority-flow.png "well-known-certificate-authority-flow")  
 
 ## >> STEP 1 : Create our own root CA certificate Authority
